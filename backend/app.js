@@ -11,7 +11,9 @@ const PORT = process.env.PORT
 //middlewares
 app.use(express.json())
 app.use(cors())
-
+app.get('/',(req,res)=>{
+    res.send('hello world');
+})
 //routes
 readdirSync('./routes').map((route) => app.use('/api/v1', require('./routes/' + route)))
 
